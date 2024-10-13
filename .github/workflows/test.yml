@@ -32,4 +32,4 @@ jobs:
 
       # Run the tests located in the hw2/tests directory
       - name: Run tests
-        run: python -m pytest hw2/tests --verbose --strict --showlocals
+        run: python -m pytest hw2/tests/test.py --verbose --strict --showlocals
