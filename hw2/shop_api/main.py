@@ -4,9 +4,12 @@ from contextlib import asynccontextmanager
 import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
+from prometheus_fastapi_instrumentator import Instrumentator
 
-from hw2.shop_api.item_api.item_router import router as irouter
-from hw2.shop_api.cart_api.cart_router import router as crouter
+# from hw2.shop_api.item_api.item_router import router as irouter
+# from hw2.shop_api.cart_api.cart_router import router as crouter
+from shop_api.item_api.item_router import router as irouter
+from shop_api.cart_api.cart_router import router as crouter
 
 
 app = FastAPI(
@@ -16,6 +19,7 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url=None,
 )
+Instrumentator().instrument(app).expose(app)
 
 app.state.Logger = logging.getLogger(name="hw2")
 app.state.Logger.setLevel("DEBUG")
