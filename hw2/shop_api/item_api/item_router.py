@@ -3,8 +3,10 @@ from fastapi import APIRouter, status, HTTPException
 from fastapi.responses import JSONResponse
 
 
-from hw2.shop_api.item_api.contracts import AddItem, AddItemPatch
-from hw2.shop_api.db import Item, items
+# from hw2.shop_api.item_api.contracts import AddItem, AddItemPatch
+# from hw2.shop_api.db import Item, items
+from shop_api.item_api.contracts import AddItem, AddItemPatch
+from shop_api.db import Item, items
 
 
 router = APIRouter(prefix="/item", tags=["item_api"])

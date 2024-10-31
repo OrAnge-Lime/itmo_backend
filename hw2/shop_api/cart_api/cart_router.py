@@ -3,7 +3,8 @@ import random
 from fastapi import APIRouter, status, HTTPException
 from fastapi.responses import JSONResponse
 
-from hw2.shop_api.db import Cart, CartItem, carts, items
+# from hw2.shop_api.db import Cart, CartItem, carts, items
+from shop_api.db import Cart, CartItem, carts, items
 
 
 router = APIRouter(prefix="/cart", tags=["cart_api"])
